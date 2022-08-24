@@ -51,16 +51,6 @@
         user-select: none;
       }
 
-      #yesbox {
-        opacity: 0;
-        transition: opacity 0.4s ease-in-out;
-      }
-
-      #nobox {
-        opacity: 0;
-        transition: opacity 0.4s ease-in-out;
-      }
-
       .checkbox-wrapper {
         display: flex;
         flex-direction: column;
@@ -149,15 +139,15 @@
             class="checkbox"
             id="yescheckbox"
             onclick="selectAttending('yes')"
-          >
-            <div id="yesbox">X</div>
-          </div>
+          ></div>
           <h2>Yes</h2>
         </div>
         <div class="checkbox-wrapper">
-          <div class="checkbox" id="nocheckbox" onclick="selectAttending('no')">
-            <div id="nobox">X</div>
-          </div>
+          <div
+            class="checkbox"
+            id="nocheckbox"
+            onclick="selectAttending('no')"
+          ></div>
           <h2>No</h2>
         </div>
       </div>
@@ -173,7 +163,13 @@
         </select>
       </div>
     </div>
-    <span style="font-size: 16px; font-family: sans-serif; font-style: italic"
+    <span
+      style="
+        font-size: 16px;
+        font-family: sans-serif;
+        font-style: italic;
+        color: #c00;
+      "
       >Tap the number to adjust</span
     >
     <button>RSVP</button>
@@ -182,16 +178,16 @@
   </body>
 </html>
 <script>
-  const yesCheckbox = document.querySelector("#yesbox")
-  const noCheckbox = document.querySelector("#nobox")
+  const yesCheckbox = document.querySelector("#yescheckbox")
+  const noCheckbox = document.querySelector("#nocheckbox")
 
   function selectAttending(choice) {
     if (choice === "yes") {
-      yesCheckbox.style.opacity = 1
-      noCheckbox.style.opacity = 0
+      yesCheckbox.innerHTML = "X"
+      noCheckbox.innerHTML = ""
     } else {
-      yesCheckbox.style.opacity = 0
-      noCheckbox.style.opacity = 1
+      yesCheckbox.innerHTML = ""
+      noCheckbox.innerHTML = "X"
     }
   }
 </script>
