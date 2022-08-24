@@ -8,9 +8,20 @@
     />
     <style>
       body {
+        animation: fadein 3s ease-in;
         background-color: #ddd;
         font-family: Send Flowers;
         text-align: center;
+      }
+
+      @keyframes fadein {
+        0% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
       }
       h1 {
         font-size: 4em;
