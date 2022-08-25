@@ -3,15 +3,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Satisfy&family=Send+Flowers&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Satisfy&family=Send+Flowers&family=Bitter&display=swap"
       rel="stylesheet"
     />
     <style>
       body {
         animation: fadein 2.5s ease-in;
-        background-color: #ddd;
+        background-color: #ecd;
         font-family: Send Flowers;
         text-align: center;
+        margin: 0px;
       }
 
       @keyframes fadein {
@@ -29,6 +30,8 @@
         /* margin: 50px 50px 0.5em 50px; */
         margin-bottom: 0.25em;
         margin-top: -20px;
+        text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff,
+          0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff, 0 0 10px #fff;
       }
 
       h2 {
@@ -85,15 +88,15 @@
       #nameinput {
         background: none;
         border: none;
-        border-top: 1px solid #ddd;
-        border-left: 1px solid #ddd;
-        border-right: 1px solid #ddd;
+        border-top: 1px solid #ecd;
+        border-left: 1px solid #ecd;
+        border-right: 1px solid #ecd;
         border-bottom: 5px solid black;
         color: #c00;
         font-family: Satisfy;
         font-size: 2.5em;
         font-weight: 200;
-        /* margin-top: 10px; */
+        padding: 0px;
         text-align: center;
         width: 80%;
       }
@@ -133,12 +136,15 @@
         color: #000;
         cursor: pointer;
         display: block;
+        font-family: Bitter;
         font-size: 2em;
         font-weight: 700;
+        letter-spacing: 2px;
         margin-top: 25px;
         /* margin-bottom: 20px; */
         padding: 10px 30px;
         /* width: 100%; */
+
         transition: background-color 0.3s ease-in, color 0.3s ease-in;
       }
       button:hover {
