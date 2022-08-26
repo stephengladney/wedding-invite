@@ -25,7 +25,7 @@ class GuestsController < ApplicationController
 
     respond_to do |format|
       if @guest.save
-        format.html { redirect_to guest_url(@guest), notice: "Guest was successfully created." }
+        format.html { redirect_to "/guests/thanks", notice: "Guest was successfully created." }
         format.json { render :show, status: :created, location: @guest }
       else
         format.html { render :new, status: :unprocessable_entity }
