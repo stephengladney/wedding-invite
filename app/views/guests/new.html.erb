@@ -132,7 +132,6 @@
         border: 5px solid black;
         background-color: transparent;
         color: #000;
-        cursor: pointer;
         display: block;
         font-family: Bitter;
         font-size: 2em;
@@ -177,7 +176,7 @@
         </div>
       </div>
     </div>
-    <input id="nameinput" name="guest[name]" /><br />
+    <input id="nameinput" name="guest[name]" required /><br />
     <label for="nameinput" id="nameinput-label">Your Name</label>
     <div id="guestcount-container">
       <h3 style="margin-bottom: 0">Attending:</h3>
@@ -200,7 +199,8 @@
     <div style="display: flex; justify-content: center">
       <input type="submit" id="submit" value="RSVP" name="commit" />
     </div>
-    <% end %>
+    <% end %> <% if @guest.errors.any? %> <% @guest.errors.full_messages.each do
+    |msg| %> <%= msg %> <% end %> <% end %>
   </body>
 </html>
 <script>

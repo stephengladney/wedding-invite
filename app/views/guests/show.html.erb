@@ -1,10 +1,64 @@
-<p style="color: green"><%= notice %></p>
+<%# <p style="color: green"><%= notice %>
+<%# </p> %>
 
-<%= render @guest %>
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Satisfy&family=Send+Flowers&family=Bitter&display=swap"
+      rel="stylesheet"
+    />
+<style>
+body {
+  background-color: #ecd;
+        font-family: Send Flowers;
+        text-align: center;
+        margin: 0px;
+}
 
-<div>
-  <%= link_to "Edit this guest", edit_guest_path(@guest) %> |
-  <%= link_to "Back to guests", guests_path %>
+a {
+  border: 5px solid black;
+        background-color: transparent;
+        color: #000;
+        font-family: Bitter;
+        font-weight: 700;
+        letter-spacing: 2px;
+        margin-top: 25px;
+        padding: 10px 30px;
+        text-decoration: none;
+        transition: background-color 0.3s ease-in, color 0.3s ease-in;
+}
 
-  <%= button_to "Destroy this guest", @guest, method: :delete %>
+h1 {
+  position: absolute;
+  font-size: 100px !important;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%,-50%);
+  
+}
+
+#thankscontainer {
+  /* height: 100vh;
+  width: 100vw;
+  display: "flex";
+  flex-direction: "column";
+  justify-content:"center";
+  align-items:"center"; */
+}
+</style>
+</head>
+<body>
+
+<%# <%= render @guest %> 
+
+<div id="thankscontainer">
+<h1>Thank you!</h1>
+<%# <h2>
+  <%= link_to "Update your RSVP", new_guest_path(@guest) %> 
+  <%# </h2>  %>
+  
 </div>
+</body>
+</html>

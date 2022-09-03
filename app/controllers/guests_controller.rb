@@ -22,16 +22,21 @@ class GuestsController < ApplicationController
   # POST /guests or /guests.json
   def create
     @guest = Guest.new(guest_params)
-
-    respond_to do |format|
-      if @guest.save
-        format.html { redirect_to "/guests/thanks", notice: "Guest was successfully created." }
-        format.json { render :show, status: :created, location: @guest }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @guest.errors, status: :unprocessable_entity }
-      end
+    if @guest.save
+    redirect_to @guest
+    else
     end
+
+    # respond_to do |format|
+    #   if @guest.save
+    #     redirect_to @guest
+    #     # format.html { redirect_to @guest, notice: "Guest was successfully created.",allow_other_host: true }
+    #     # format.json { render :show, status: :created, location: @guest }
+    #   else
+    #     format.html { render :new, status: :unprocessable_entity }
+    #     format.json { render json: @guest.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /guests/1 or /guests/1.json
