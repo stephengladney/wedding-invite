@@ -176,14 +176,19 @@
         </div>
       </div>
     </div>
-    <input id="nameinput" name="guest[name]" required /><br />
+    <input
+      id="nameinput"
+      name="guest[name]"
+      required
+      onchange="hideMultiGuest()"
+    /><br />
     <label for="nameinput" id="nameinput-label">Your Name</label>
     <div id="guestcount-container">
       <h3 style="margin-bottom: 0">Attending:</h3>
       <div>
         <select id="guest-selector" name="guest[people]">
           <option value="1">1</option>
-          <option value="2">2</option>
+          <option id="twopeople" value="2">2</option>
         </select>
       </div>
     </div>
@@ -218,5 +223,16 @@
       noCheckbox.innerHTML = "X"
       realCheckbox.checked = false
     }
+  }
+
+  const singles = ["george", "abel", "hillary", "thrills", "thrillz"]
+  const input = document.querySelector("#nameinput")
+  function hideMultiGuest() {
+    singles.forEach((single) => {
+      if (String(input.value).toLowerCase().includes(single)) {
+        console.log(single)
+        document.querySelector("#twopeople").style.display = "none"
+      }
+    })
   }
 </script>
