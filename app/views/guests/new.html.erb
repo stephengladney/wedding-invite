@@ -227,7 +227,9 @@
 
   const singles = ["george", "abel", "hillary", "thrills", "thrillz"]
   const input = document.querySelector("#nameinput")
+  input.addEventListener("change", hideMultiGuest)
   function hideMultiGuest() {
+    console.log("fired")
     singles.forEach((single) => {
       if (String(input.value).toLowerCase().includes(single)) {
         document.querySelector("#twopeople").style.display = "none"
