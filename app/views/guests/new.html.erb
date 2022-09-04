@@ -117,6 +117,7 @@
         font-family: Send Flowers;
         font-weight: 700;
         margin-left: 20px;
+        width: 44px;
       }
       #guest-selector:focus {
         outline: none;
@@ -232,7 +233,7 @@
   function hideMultiGuest() {
     singles.forEach((single) => {
       if (String(input.value).toLowerCase().includes(single)) {
-        document.querySelector("#twopeople").style.display = "none"
+        document.querySelector("#twopeople").remove()
       }
     })
   }
